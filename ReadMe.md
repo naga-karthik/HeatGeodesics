@@ -4,6 +4,8 @@ This project is one of the assignments in the Fundamentals of Computer Graphics 
 
 It is based on the ACM Transactions on Graphics paper, titled, "Geodesics in Heat: A New Approach to Computing Distance Based on Heat Flow". While it is good to read the paper, complete understanding of it is not required for this project.
 
+## Getting Started
+The code is entirely based on Java and some OpenGL, therefore the jogl, vecmath and mintools jar files need to installed for running the code. Inside the "src" folder are some classes that run in tandem to show the diffusion of heat in various objects (given in the "meshdata" folder).
 
 Here is a brief explanation of all the classes:
 * MeshProcessingApp - The main function that creates a view.
