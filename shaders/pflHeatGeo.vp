@@ -1,0 +1,30 @@
+/*
+ * Name: E M V Naga Karthik
+ * McGill ID: 260906923
+ */
+
+#version 330 core
+
+//layout(location = 0) 
+in vec3 vertex;
+in vec3 normal;
+in float ut;
+in float phi;
+
+out vec3 camSpacePosition;
+out vec3 camSpaceNormal;
+out float utv;
+out float phiv;
+
+uniform mat4 projection;
+uniform mat4 modelview;
+
+void main() {	
+	vec4 csp = modelview * vec4( vertex, 1 );
+	camSpacePosition = csp.xyz;
+	utv = ut;
+	phiv = phi;
+	// assuming view is a rigid transform, just use the view matrix for the normal
+	camSpaceNormal = normalize((modelview * vec4( normal, 0 )).xyz);	
+	gl_Position = projection * csp;
+}

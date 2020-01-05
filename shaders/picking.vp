@@ -1,0 +1,19 @@
+/*
+ * Name: E M V Naga Karthik
+ * McGill ID: 260906923
+ */
+
+#version 330 core
+
+in vec3 vertex;
+in vec3 color;
+
+out vec3 colorv;
+
+uniform mat4 projection;
+uniform mat4 modelview;
+
+void main() {
+	colorv = color;	
+	gl_Position = projection * modelview * vec4( vertex, 1 );
+}
